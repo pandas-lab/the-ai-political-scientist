@@ -38,5 +38,5 @@ If you are a current member the University of Pittsburgh's Department of Politic
 - [glm-4.7-flash](https://ollama.com/library/glm-4.7-flash)
 - [gpt-oss](https://ollama.com/library/gpt-oss)
 - [llama4:16x17b](https://ollama.com/library/llama4)
-- [nemotron-cascade](https://ollama.com/library/nemotron-cascade-2)
+- [nemotron-cascade-2](https://ollama.com/library/nemotron-cascade-2)
 - I'm working on the new hotness, [Gemma 4](https://ollama.com/library/gemma4), but it's tool use is currently broken.
