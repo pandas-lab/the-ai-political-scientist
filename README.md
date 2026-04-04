@@ -21,7 +21,7 @@ If you are a current member the University of Pittsburgh's Department of Politic
     - Papers you want it to read for inspiration.
 3. **Model Choice (optional)**: Which local model, from (Ollama)[https://ollama.com/search], do you want to use?
     - If you don't pick one, I'll just use my favorite.
-    - It must be one that has the `tools` tag.
+    - It must be one that has the `tools` and `thinking` tags.
     - It cannot be one that _only_ has `cloud` versions (it must have a downloadable version).
     - If it's too big or I can't get it to work, I'll fall back on my favorite model.
   
@@ -30,3 +30,13 @@ If you are a current member the University of Pittsburgh's Department of Politic
 - You may not use the generated papers as final paper submission for courses.
 - All prompts, supporting materials, and generated papers will be published in this repository unless you specifically ask me not to.
 - I will provide no guidance to the LLM beyond providing your prompt and approving tool use and file edits.
+
+## Recommended Models
+
+- [qwen3-coder-next](https://ollama.com/library/qwen3-coder-next)
+- [qwen3.5-27B](https://ollama.com/library/qwen3.5)
+- [glm-4.7-flash](https://ollama.com/library/glm-4.7-flash)
+- [gpt-oss](https://ollama.com/library/gpt-oss)
+- [llama4:16x17b](https://ollama.com/library/llama4)
+- [nemotron-cascade](https://ollama.com/library/nemotron-cascade-2)
+- I'm working on the new hotness, [Gemma 4](https://ollama.com/library/gemma4), but it's tool use is currently broken.
