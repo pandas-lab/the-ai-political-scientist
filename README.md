@@ -27,7 +27,7 @@ If you are a current member the University of Pittsburgh's Department of Politic
   
 ## Rules
 
-- You may not use the generated papers as final paper submission for courses.
+- You may not use any generated papers as coursework.
 - All prompts, supporting materials, and generated papers will be published in this repository unless you specifically ask me not to.
 - I will provide no guidance to the LLM beyond providing your prompt and approving tool use and file edits.
 
