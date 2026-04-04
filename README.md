@@ -19,7 +19,7 @@ If you are a current member the University of Pittsburgh's Department of Politic
     - Datasets.
     - Code you've written.
     - Papers you want it to read for inspiration.
-3. **Model Choice (optional)**: Which local model, from (Ollama)[https://ollama.com/search], do you want to use?
+3. **Model Choice (optional)**: Which local model, from [Ollama](https://ollama.com/search), do you want to use?
     - If you don't pick one, I'll just use my favorite.
     - It must be one that has the `tools` and `thinking` tags.
     - It cannot be one that _only_ has `cloud` versions (it must have a downloadable version).
