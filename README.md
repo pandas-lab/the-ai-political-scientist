@@ -40,6 +40,7 @@ If you are a current member the University of Pittsburgh's Department of Politic
 - All prompts, supporting materials, and generated papers will be published in this repository unless you specifically ask me not to.
 - I will provide no guidance to the LLM beyond providing your prompt and approving tool use and file edits.
 - I reserve the right to modify your prompt to make sure it works properly.
+- No submitting generated papers to journals or conferences.
 
 ## Recommended Models
 
