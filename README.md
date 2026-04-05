@@ -42,7 +42,7 @@ If you are a current member the University of Pittsburgh's Department of Politic
 
 - [qwen3-coder-next](https://ollama.com/library/qwen3-coder-next)
 - [qwen3.5-27B](https://ollama.com/library/qwen3.5)
-- [glm-4.7-flash](https://ollama.com/library/glm-4.7-flash)
+- [glm-4.7-flash](https://ollama.com/library/glm-4.7-flash) (Has a habit of quitting early.)
 - [gpt-oss](https://ollama.com/library/gpt-oss)
 - [nemotron-cascade-2](https://ollama.com/library/nemotron-cascade-2)
 - I'm working on the new hotness, [Gemma 4](https://ollama.com/library/gemma4), but it's tool use capabilities are currently broken.
