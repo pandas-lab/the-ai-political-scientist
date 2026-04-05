@@ -44,6 +44,7 @@ If you are a current member the University of Pittsburgh's Department of Politic
 ## Recommended Models
 
 - [qwen3-coder-next](https://ollama.com/library/qwen3-coder-next)
+- [Jackrong/Qwen3.5-27B-Claude-4.6-Opus-Reasoning-Distilled-GGUF](https://huggingface.co/Jackrong/Qwen3.5-27B-Claude-4.6-Opus-Reasoning-Distilled-GGUF)
 - [qwen3.5-27B](https://ollama.com/library/qwen3.5)
 - [glm-4.7-flash](https://ollama.com/library/glm-4.7-flash) (Has a habit of quitting early.)
 - [gpt-oss](https://ollama.com/library/gpt-oss)
