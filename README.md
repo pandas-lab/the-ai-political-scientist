@@ -37,6 +37,9 @@ If you are a current member the University of Pittsburgh's Department of Politic
 - [qwen3.5-27B](https://ollama.com/library/qwen3.5)
 - [glm-4.7-flash](https://ollama.com/library/glm-4.7-flash)
 - [gpt-oss](https://ollama.com/library/gpt-oss)
-- [llama4:16x17b](https://ollama.com/library/llama4)
 - [nemotron-cascade-2](https://ollama.com/library/nemotron-cascade-2)
 - I'm working on the new hotness, [Gemma 4](https://ollama.com/library/gemma4), but it's tool use is currently broken.
+
+## How Does This Work?
+
+I have both Claude Code (harness) and Ollama (LLM server) running on my workstation. Ollama let's us pick a local LLM to run and Claude Code provides that LLM with access to my computer and a variety of tools (web search, R, Python, LaTeX, etc...). It is, effectively, Claude Code but with open-source or open-weight models rather than Anthropic's expensive and proprietary models (Haiku, Sonnet, or Opus). These are essentially free for us but are typically not as capable as Anthropic's offerings. 
