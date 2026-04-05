@@ -1,0 +1,11 @@
+{
+  "env": {
+    "ANTHROPIC_BASE_URL": "http://0.0.0.0:11434",
+    "ANTHROPIC_AUTH_TOKEN": "ollama",
+    "model": "gemma4:26b-a4b-it-q4_K_M",
+    "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1"
+  },
+
+  "_model": "opus",
+  "_extraKnownMarketplaces": {}
+}

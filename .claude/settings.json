@@ -1,0 +1,6 @@
+{
+  "enabledMcpjsonServers": [
+    "ollama-web-search",
+    "ollama-search-fetch"
+  ]
+}

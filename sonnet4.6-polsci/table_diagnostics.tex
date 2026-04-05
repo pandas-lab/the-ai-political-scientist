@@ -1,0 +1,32 @@
+\begin{table}[htbp]\centering\small
+\caption{First Stage, Falsification, and Placebo Tests}\label{tab:diagnostics}
+\begin{tabular}{lcccc}
+\toprule
+ & (1) & (2) & (3) & (4) \\
+ & \textit{Oil Rents} & \textit{Oil Rents} & \textit{ln SB Deaths} & \textit{ln NS Deaths} \\
+\midrule
+$\Delta\ln(\text{Oil})_t \times \ln(\overline{\text{Oil}}_i)$ [IV] & 0.269*** &  &  &  \\
+ & (0.022) &  &  &  \\
+$\Delta\ln(\text{Food})_t \times \ln(\overline{\text{Oil}}_i)$ [Placebo IV] &  & 0.287*** &  &  \\
+ &  & (0.024) &  &  \\
+Oil Rents (ln\%GDP) [inst.] &  &  & 0.124 & -0.100 \\
+ &  &  & (0.439) & (0.268) \\
+Excluded Pop.\ Share & 0.085 & 0.085 & -0.211 & -0.377 \\
+ & (0.079) & (0.079) & (0.230) & (0.350) \\
+Democracy (V-Dem Polyarchy) & 0.085 & 0.081 & 0.037 & -0.319 \\
+ & (0.219) & (0.219) & (0.260) & (0.368) \\
+ln(GDP/cap, non-oil) & 0.002 & 0.001 & -0.156 & -0.397* \\
+ & (0.031) & (0.031) & (0.115) & (0.214) \\
+ln(Population) & 0.200 & 0.208 & 0.400* & 1.107*** \\
+ & (0.169) & (0.168) & (0.232) & (0.384) \\
+Lagged DV ($t-1$) & 0.011 & 0.011 & 0.625*** & 0.158*** \\
+ & (0.011) & (0.011) & (0.038) & (0.035) \\
+\midrule
+Observations & 1,512 & 1,512 & 1,512 & 1,512 \\
+$R^2$ & 0.067 & 0.066 & 0.428 & 0.106 \\
+Country FE & Yes & Yes & Yes & Yes \\
+\bottomrule
+\multicolumn{5}{p{0.95\linewidth}}{\footnotesize
+\textit{Note}: Column (1): First stage for main instrument. Dependent variable: $\ln(\text{oil rents }\%\text{GDP}+1)$ (World Bank). Column (2): First-stage using food price $\times$ oil exposure as a placebo IV; food price changes should not predict oil revenues. Column (3): 2SLS using food price instrument---IV should be irrelevant for conflict if exclusion restriction holds. Column (4): 2SLS second stage using non-state conflict as outcome; oil rents should not affect armed group violence via the same channel. Standard errors clustered by country. *, **, *** denote $p<0.10$, $p<0.05$, $p<0.01$.}
+\end{tabular}
+\end{table}

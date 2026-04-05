@@ -1,0 +1,33 @@
+\begin{table}[htbp]\centering\small
+\caption{First Stage and Falsification Tests}\label{tab:firststage}
+\begin{tabular}{lccc}
+\toprule
+ & (1) & (2) & (3) \\
+ & \textit{Oil Revenue (ln)} & \textit{Oil Revenue (ln)} & \textit{ln SB Deaths} \\
+\midrule
+Brent Price $\times$ Oil Exposure & -0.013 &  &  \\
+ & (0.029) &  &  \\
+Food Price $\times$ Oil Exposure &  & -0.018 &  \\
+ &  & (0.033) &  \\
+Oil Revenue (ln) [inst.] &  &  & -0.896 \\
+ &  &  & (3.698) \\
+Excluded Pop.\ Share & 0.248 & 0.248 & -0.027 \\
+ & (0.259) & (0.259) & (1.000) \\
+Democracy (V-Dem Polyarchy) & -0.513 & -0.516 & -0.569 \\
+ & (0.337) & (0.337) & (1.814) \\
+ln(GDP/cap, non-oil) & 0.175 & 0.174 & 0.016 \\
+ & (0.152) & (0.152) & (0.670) \\
+ln(Population) & 1.113* & 1.111* & 1.139 \\
+ & (0.607) & (0.608) & (4.087) \\
+Lagged DV & 0.016 & 0.016 & 0.630*** \\
+ & (0.011) & (0.011) & (0.083) \\
+\midrule
+Observations & 1,566 & 1,566 & 1,566 \\
+$R^2$ & 0.092 & 0.092 & 0.333 \\
+Country FE & Yes & Yes & Yes \\
+Year FE & Yes & Yes & Yes \\
+\bottomrule
+\multicolumn{4}{p{0.95\linewidth}}{\footnotesize
+\textit{Note}: Column (1): First stage. Dependent variable is log oil rent (share of GDP). Column (2): First stage using food/agricultural price $\times$ oil exposure; if valid exclusion restriction, food prices should not predict oil revenues. Column (3): Falsification---using food price instrument to predict conflict. Standard errors clustered by country. *, **, *** indicate $p<0.10$, $p<0.05$, $p<0.01$.}
+\end{tabular}
+\end{table}
