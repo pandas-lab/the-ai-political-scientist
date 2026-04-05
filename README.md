@@ -5,7 +5,8 @@ This repository contains the prompts, supplemental materials, and output from ex
 
 ## Authors
 -    [Benjamin J. Radford](https://www.benradford.com)
--    Your name here if you participate
+-    Muyao Hang
+-    Masateru Yamatani
 
 ## Contents
 1. [Submitting a Project](#submitting-a-project)
