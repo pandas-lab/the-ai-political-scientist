@@ -7,6 +7,13 @@ This repository contains the prompts, supplemental materials, and output from ex
 -    [Benjamin J. Radford](https://www.benradford.com)
 -    Your name here if you participate
 
+## Contents
+1. [Submitting a Project](#submitting-a-project)
+2. [Rules](#rules)
+3. [Recommended Models](#recommended-models)
+4. [How Does This Work?](#how-does-this-work?)
+5. [Notes](#notes)
+
 ## Submitting a Project
 
 If you are a current member the University of Pittsburgh's Department of Political Science or School of Public and International Affairs, send to me ([Benjamin J. Radford](https://www.benradford.com)) the following items:
@@ -43,3 +50,7 @@ If you are a current member the University of Pittsburgh's Department of Politic
 ## How Does This Work?
 
 I have both Claude Code (harness) and Ollama (LLM server) running on my workstation. Ollama let's us pick a local LLM to run and Claude Code provides that LLM with access to my computer and a variety of tools (web search, R, Python, LaTeX, etc...). It is, effectively, Claude Code but with open-source or open-weight models rather than Anthropic's expensive and proprietary models (Haiku, Sonnet, or Opus). These are essentially free for us but are typically not as capable as Anthropic's offerings. 
+
+## Notes
+
+- Check out the Sonnet 4.6 paper. It's legit. You get what you pay for.
