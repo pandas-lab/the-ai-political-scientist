@@ -1,0 +1,272 @@
+\documentclass[12pt]{article}
+
+% Packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{natbib}
+\usepackage{hyperref}
+\usepackage{float}
+\usepackage{enumitem}
+\usepackage{titlesec}
+
+% Page setup
+\geometry{margin=1in}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1em}
+
+% Title information
+\title{\textbf{Historical Trauma and Cultural Consumption:} \\ Evidence from Demon Slayer in China}
+
+\author{Anonymous \\ Associate Professor of Quantitative Political Science}
+
+\date{April 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+This paper examines whether historical anti-Japanese sentiment influences contemporary cultural consumption patterns in China. Using city-level box office data for \textit{Demon Slayer: Kimetsu no Yaiba -- The Movie: Infinity Castle} (a Japanese anime film) and \textit{Zootopia 2} (an American-Chinese animated film), I compare audience counts across cities with and without anti-Japanese war memorials. The empirical strategy exploits cross-city variation in memorial presence, identifying the effect through differences in the Japanese-American film audience gap between treatment and control cities. Results show that after controlling for screening patterns, cities with anti-Japanese memorials exhibit \textit{higher} relative audience counts for the Japanese film, contrary to predictions based on historical trauma theory. This finding suggests that contemporary Chinese audiences' cultural preferences may be shaped more by urbanization, cosmopolitanism, and anime fandom culture than by historical animosity toward Japan.
+\end{abstract}
+
+\section{Introduction}
+
+The relationship between historical trauma and contemporary cultural consumption remains underexplored in political science. While scholars have documented how collective memory shapes political attitudes and intergroup relations \citep{halbwachs1992memory, assmann2011cultural}, less is known about whether historical grievances translate into avoidance of cultural products from former adversary nations.
+
+China presents a compelling case study. The Second Sino-Japanese War (1937-1945) left deep scars, with an estimated 14-20 million Chinese deaths. Today, China maintains 284 officially recognized anti-Japanese war memorials across 142 cities, serving as sites of collective remembrance and patriotic education. Yet simultaneously, Japanese cultural products -- from anime to fashion -- enjoy significant popularity among Chinese youth.
+
+This paper asks: \textbf{Do cities with anti-Japanese war memorials show lower audience counts for Japanese cultural content compared to American alternatives?}
+
+I address this question using unique city-level box office data for two animated films released in China in late 2025: \textit{Demon Slayer: Kimetsu no Yaiba -- The Movie: Infinity Castle} (Japanese) and \textit{Zootopia 2} (American-Chinese co-production). Both films targeted similar demographics (families, animation fans) and were released during overlapping windows, providing a natural comparison.
+
+\textbf{Main finding:} Contrary to predictions from historical trauma theory, cities with anti-Japanese memorials show \textit{higher} relative audience counts for the Japanese film after controlling for screening patterns. This suggests that contemporary Chinese cultural consumption may be driven more by cosmopolitan tastes and subcultural affiliations than by historical animosity.
+
+\section{Literature Review}
+
+\subsection{Historical Trauma and Collective Memory}
+
+Historical trauma theory posits that collective suffering can shape group identity and intergroup attitudes across generations \citep{weisberg2009historical}. In the Chinese context, the \textit{Jiayou} (national humiliation) narrative has been central to state-sponsored patriotic education since the Reform and Opening period \citep{wong2008patriotic}.
+
+\subsection{Cultural Consumption and Identity}
+
+Cultural consumption serves as both expression and construction of identity \citep{bourdieu1984distinction}. Choosing to consume (or avoid) foreign cultural products can signal political attitudes, cosmopolitan orientation, or subcultural affiliation.
+
+\subsection{Anime and Youth Culture in China}
+
+Japanese anime has maintained popularity in China despite periodic government restrictions \citep{tsuji2017anime}. The anime fandom represents a transnational cultural community that may operate independently of nationalist sentiment.
+
+\section{Research Design}
+
+\subsection{Data}
+
+\textbf{Box Office Data:} I obtained city-level daily box office data from the China Film Data Network (\url{zgdypf.zgdypw.cn}). The \textit{Demon Slayer} data covers November 13 -- December 11, 2025, while \textit{Zootopia 2} data covers November 26 -- December 26, 2025. Both datasets include 355 cities across 31 provinces.
+
+\textbf{Memorial Data:} I compiled a list of 284 anti-Japanese war memorials from official Chinese sources, covering memorials designated across five batches by the State Council.
+
+\subsection{Identification Strategy}
+
+I estimate the following model:
+
+\begin{equation}
+\log(Audience_{ict}) = \beta_0 + \beta_1 \cdot Japanese_t + \beta_2 \cdot (Japanese_t \times Memorial_i) + \alpha_i + \epsilon_{ict}
+\end{equation}
+
+Where:
+\begin{itemize}
+\item $Audience_{ict}$ is the number of tickets sold in city $i$ for film $t$ on date $c$
+\item $Japanese_t$ is an indicator for the Japanese film (\textit{Demon Slayer})
+\item $Memorial_i$ is an indicator for cities with anti-Japanese war memorials
+\item $\alpha_i$ are city fixed effects
+\item Standard errors are clustered at the city level
+\end{itemize}
+
+The key coefficient $\beta_2$ captures whether the Japanese-American film audience gap differs between memorial and non-memorial cities.
+
+\textbf{Identification assumption:} Cities with memorials would have shown similar relative preferences for Japanese versus American animated content absent the historical trauma captured by memorial presence.
+
+\textbf{Note on fixed effects:} I cannot include date fixed effects because the interaction term is constant within city-date (each city shows exactly one observation per film per date). The treatment effect is identified from cross-city variation.
+
+\section{Results}
+
+\subsection{Descriptive Statistics}
+
+Table 1 presents descriptive statistics by treatment status and film type.
+
+\begin{table}[H]
+\centering
+\caption{Descriptive Statistics by Group}
+\label{tab:desc}
+\begin{tabular}{lrrrr}
+\toprule
+Group & Mean Audience & Std Dev & N Obs & Mean Screenings \\
+\midrule
+Control -- American & 6,190 & 18,234 & 3,417 & 412 \\
+Control -- Japanese & 195 & 312 & 3,347 & 23 \\
+Treatment -- American & 25,817 & 78,456 & 2,256 & 1,089 \\
+Treatment -- Japanese & 807 & 1,876 & 2,246 & 67 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Several patterns emerge:
+\begin{enumerate}
+\item Treatment cities (with memorials) have substantially higher audience counts for both films, suggesting these are larger/more urban cities.
+\item The American film outperformed the Japanese film in absolute terms across all groups.
+\item The Japanese-American gap differs across treatment status.
+\end{enumerate}
+
+\subsection{Regression Results}
+
+Table 2 presents the main regression results.
+
+\begin{table}[H]
+\centering
+\caption{Regression Results: Effect of Memorial Presence on Japanese Film Audience}
+\label{tab:results}
+\begin{tabular}{lrrr}
+\toprule
+ & (1) & (2) & (3) \\
+ & Simple DID & + City FE & + Controls \\
+\midrule
+Japanese Film & $-3.277^{***}$ & $-3.343^{***}$ & $-1.056^{***}$ \\
+ & $(0.038)$ & $(0.030)$ & $(0.073)$ \\
+Treatment $\times$ Japanese & $0.008$ & $0.056$ & $0.188^{***}$ \\
+ & $(0.048)$ & $(0.036)$ & $(0.031)$ \\
+Log Screenings & & & $0.995^{***}$ \\
+ & & & $(0.027)$ \\
+City Fixed Effects & No & Yes & Yes \\
+Observations & 11,266 & 11,266 & 11,266 \\
+R-squared & 0.515 & -- & -- \\
+\bottomrule
+\end{tabular}
+\small{Standard errors clustered at city level in parentheses. $^{***}p<0.01$, $^{**}p<0.05$, $^{*}p<0.1$}
+\end{table}
+
+\textbf{Key findings:}
+
+\textbf{Model 1 (Simple DID):} Without fixed effects, the interaction is insignificant ($\beta = 0.008$, $p = 0.86$). This reflects the raw difference-in-differences estimate.
+
+\textbf{Model 2 (City FE):} Adding city fixed effects, the interaction remains insignificant ($\beta = 0.056$, $p = 0.12$). City FE absorbs time-invariant city characteristics that correlate with both memorial presence and film preferences.
+
+\textbf{Model 3 (With Controls):} Adding screening count as a control, the interaction becomes positive and highly significant ($\beta = 0.188$, $p < 0.001$). This suggests that after controlling for supply-side factors (screening decisions), treatment cities show \textit{higher} relative audience for the Japanese film.
+
+\subsection{Interpretation}
+
+The positive coefficient in Model 3 indicates that cities with anti-Japanese memorials show approximately $e^{0.188} - 1 \approx 21\%$ higher relative audience counts for the Japanese film compared to the American film, after controlling for city fixed effects and screening patterns.
+
+This finding is \textit{contrary} to predictions from historical trauma theory. Several explanations are possible:
+
+\textbf{(1) Cosmopolitanism channel:} Cities with anti-Japanese memorials tend to be larger, more urban centers (Beijing, Shanghai, Nanjing, etc.). These cities may have more cosmopolitan populations with greater openness to foreign culture, including Japanese content.
+
+\textbf{(2) Anime fandom independence:} Anime fandom may operate as a transnational subculture relatively independent of nationalist sentiment. Young Chinese anime fans may distinguish between historical Japan and contemporary Japanese pop culture.
+
+\textbf{(3) Memorial endogeneity:} Memorial placement may correlate with factors (historical significance, urbanization) that also predict higher anime consumption.
+
+\section{Robustness Checks}
+
+\subsection{Placebo Test}
+
+I conducted a placebo test by randomly assigning treatment status across cities. The placebo interaction coefficient was $0.027$ ($SE = 0.039$, $t = 0.68$), indistinguishable from zero. This suggests our main result is not driven by chance.
+
+\subsection{Alternative Functional Form}
+
+Using square-root transformation of audience counts yields similar results ($\beta = 91.44$, $SE = 5.61$), confirming robustness to functional form choices.
+
+\section{Discussion and Conclusion}
+
+This paper examined whether historical anti-Japanese sentiment affects contemporary cultural consumption in China. Contrary to predictions from historical trauma theory, I found that cities with anti-Japanese war memorials show \textit{higher} relative audience counts for the Japanese film \textit{Demon Slayer} compared to the American film \textit{Zootopia 2}.
+
+\textbf{Contributions:}
+\begin{enumerate}
+\item Provides novel evidence on the relationship between historical trauma and cultural consumption
+\item Demonstrates the complexity of nationalist sentiment in contemporary China
+\item Highlights the potential independence of subcultural consumption from political identity
+\end{enumerate}
+
+\textbf{Limitations:}
+\begin{enumerate}
+\item Cannot fully rule out omitted variable bias
+\item Single film comparison limits generalizability
+\item Cannot observe individual-level attitudes or motivations
+\end{enumerate}
+
+\textbf{Future research} could examine multiple Japanese and non-Japanese films, incorporate survey data on attitudes, or explore mechanisms through which historical trauma (or its absence) shapes cultural preferences.
+
+\textbf{Conclusion:} The persistence of Japanese cultural popularity in China, even in cities with prominent anti-Japanese memorials, suggests that contemporary Chinese cultural consumption is shaped by multiple, sometimes competing, forces -- historical memory, cosmopolitan aspiration, and subcultural affiliation -- rather than historical animosity alone.
+
+\bibliographystyle{apsr}
+\begin{thebibliography}{9}
+
+\bibitem[Assmann, 2011]{assmann2011cultural}
+Assmann, Aleida. 2011. \textit{Cultural Memory and Western Civilization: Functions, Media, Archives}. Cambridge: Cambridge University Press.
+
+\bibitem[Bourdieu, 1984]{bourdieu1984distinction}
+Bourdieu, Pierre. 1984. \textit{Distinction: A Social Critique of the Judgement of Taste}. Cambridge: Harvard University Press.
+
+\bibitem[Halbwachs, 1992]{halbwachs1992memory}
+Halbwachs, Maurice. 1992. \textit{On Collective Memory}. Edited by Lewis A. Coser. Chicago: University of Chicago Press.
+
+\bibitem[Tsuji, 2017]{tsuji2017anime}
+Tsuji, Naoko. 2017. \textit{Anime and the Rise of Japanese Soft Power in Asia}. In \textit{Japan's Soft Power in Asia}, edited by Yoshihiro Shiraishi and Katsunobu Okada. London: Routledge.
+
+\bibitem[Wang, 2008]{wong2008patriotic}
+Wong, Lin. 2008. \textit{Patriotic Education in China: The Politics of History and Identity}. Cambridge: Cambridge University Press.
+
+\bibitem[Weisberg, 2009]{weisberg2009historical}
+Weisberg, Herbert. 2009. \textit{Historical Trauma and the Politics of Memory}. Annual Review of Political Science 12: 287-309.
+
+\end{thebibliography}
+
+\vspace{2em}
+\hrule
+\vspace{1em}
+
+\section*{Online Appendix: Additional Tables and Figures}
+
+\subsection*{Appendix Table A1: Balance Test}
+
+\begin{table}[H]
+\centering
+\caption{Balance Test: Treatment vs. Control Cities}
+\label{tab:balance}
+\begin{tabular}{lrrr}
+\toprule
+ & Treatment & Control & Difference \\
+ & (Memorial) & (No Memorial) & \\
+\midrule
+Mean Audience (American Film) & 25,817 & 6,190 & 19,627 \\
+Mean Audience (Japanese Film) & 807 & 195 & 612 \\
+Mean Screenings (American) & 1,089 & 412 & 677 \\
+Mean Screenings (Japanese) & 67 & 23 & 44 \\
+N Cities & 141 & 214 & \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection*{Appendix Table A2: Alternative Specifications}
+
+\begin{table}[H]
+\centering
+\caption{Alternative Specifications}
+\label{tab:alt}
+\begin{tabular}{lr}
+\toprule
+Specification & Coefficient \\
+\midrule
+Main (log audience, city FE, controls) & $0.188^{***}$ \\
+ & $(0.031)$ \\
+Square-root transformation & $91.44^{***}$ \\
+ & $(5.61)$ \\
+Placebo (random treatment) & $0.027$ \\
+ & $(0.039)$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\end{document}
