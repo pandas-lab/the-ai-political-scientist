@@ -11,7 +11,7 @@ This repository contains the prompts, supplemental materials, and output from ex
 1. [Submitting a Project](#submitting-a-project)
 2. [Rules](#rules)
 3. [Recommended Models](#recommended-models)
-4. [How Does This Work?](#how-does-this-work?)
+4. [How Does This Work?](#how-does-this-work)
 5. [Notes](#notes)
 
 ## Submitting a Project
