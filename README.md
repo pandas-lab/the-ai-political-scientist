@@ -3,6 +3,8 @@ _Vibe Science_
 
 This repository contains the prompts, supplemental materials, and output from experiments in the use of local Large Language Models (LLMs) to autonomously generate research products in political science and adjacent fields.
 
+Yinz convinced me. What can I say?
+
 ## Authors
 -    [Benjamin J. Radford](https://www.benradford.com)
 -    Your name here if you participate
