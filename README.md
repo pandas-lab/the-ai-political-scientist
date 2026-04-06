@@ -59,3 +59,4 @@ I have both Claude Code (harness) and Ollama (LLM server) running on my workstat
 
 - Check out the Sonnet 4.6 paper. It's legit. You get what you pay for.
 - `muh/` model is `Jackrong/Qwen3.5-27B-Claude-4.6-Opus-Reasoning-Distilled-GGUF:Q8.0`
+- Once a job is submitted, it typically takes between 10 and 20 minutes to complete.
