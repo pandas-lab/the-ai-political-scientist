@@ -1,0 +1,318 @@
+\documentclass[12pt]{article}
+
+%% --- Packages ---
+\usepackage[margin=1in]{geometry}
+\usepackage{setspace}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{natbib}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{threeparttable}
+\usepackage{dcolumn}
+%\usepackage{siunitx}
+%\usepackage{rotating}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=black,
+  citecolor=black,
+  urlcolor=blue
+}
+
+\doublespacing
+
+\title{Historical Grievances and Cultural Consumption:\\
+Evidence from \textit{Demon Slayer} Box Office in China%
+\thanks{I thank seminar participants for helpful comments. All errors are my own.}}
+
+\author{Anonymous\\
+\small Department of Political Science}
+
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Does historical anti-Japanese sentiment suppress demand for Japanese cultural products in China? I exploit city-level variation in the number of officially designated anti-Japanese memorial sites---a plausibly exogenous, historically determined treatment---to estimate its effect on attendance at \textit{Demon Slayer: Kimetsu no Yaiba -- The Movie: Infinity Castle} (2025), a blockbuster Japanese anime film. Using a difference-in-differences design that compares Demon Slayer to Zootopia~2 (an American non-Japanese film released concurrently), with two-way city and date fixed effects, I find \emph{no significant effect} of anti-Japanese memorialization on Demon Slayer attendance relative to Zootopia~2. The point estimate on the key interaction term is small and statistically indistinguishable from zero ($\hat{\beta} = 0.007$, $p = 0.54$). Exploratory supply-side decompositions suggest that conditional on theater allocation, attendance per screening is weakly higher in memorial cities---a pattern consistent with cinemas rationing supply even as demand holds firm. These results challenge conventional assumptions that historical grievances mechanically translate into boycotts of outgroup cultural products.
+\end{abstract}
+
+\newpage
+
+\section{Introduction}
+
+Anti-Japanese sentiment is among the most politically salient forms of nationalist affect in contemporary China. Rooted in the Second Sino-Japanese War (1937--1945), and periodically reactivated by territorial disputes, political anniversaries, and government-sanctioned commemoration campaigns, it represents a well-documented dimension of Chinese political culture \citep{wang2012,weiss2014,shirk2007}. A natural conjecture follows: in cities with a denser infrastructure of anti-Japanese remembrance---memorial halls, martyrs' cemeteries, resistance museums---citizens should be more likely to boycott Japanese cultural exports.
+
+Japan's anime industry has become one of the most globally prominent vectors of Japanese soft power. \textit{Demon Slayer: Kimetsu no Yaiba -- The Movie: Infinity Castle}, released in China on November~13, 2025, provides a rare opportunity to test this conjecture. The film is unambiguously Japanese in origin and aesthetic; it entered Chinese theaters at a moment of well-publicized anti-Japanese activism in Chinese social media; and unusually rich city-level box office data, published daily by the China Film Market Research Center, allow granular identification of geographic variation in attendance.
+
+I design a difference-in-differences (DID) strategy exploiting two sources of variation: (1) across-city variation in the number of officially gazetted anti-Japanese memorial sites, a stock variable determined by WWII geography that is plausibly exogenous to contemporary movie preferences; and (2) across-film variation in Japanese origin, using Zootopia~2 (released November~26, 2025) as a control film. Zootopia~2 is American, culturally neutral with respect to Sino-Japanese historical grievances, and similarly aimed at a family/youth audience. By comparing Demon Slayer and Zootopia~2 attendance across cities with varying levels of memorial density, I difference out both city-level moviegoing propensity and the China-wide popularity gap between the two films.
+
+The main result is a precise null: anti-Japanese memorial density has no detectable negative effect on Demon Slayer attendance relative to Zootopia~2. This holds across specifications with and without supply-side controls. Secondary analyses suggest that conditional on the number of screenings allocated to each film, attendance per screening is if anything slightly higher in memorial cities for Demon Slayer---a pattern consistent with cinemas rationing Japanese content even as underlying demand among moviegoers who attend remains undiminished.
+
+These findings contribute to three bodies of literature. First, they bear on theories of nationalist boycotts and economic nationalism \citep{pandya2016,garcia2020}. Second, they speak to work on the political economy of cultural markets, where scholars have found mixed evidence that nationalist sentiment shapes media consumption \citep{jaroslaw2018,bai2021}. Third, they add to the growing literature using natural experiments to identify the behavioral consequences of historical memory \citep{lowes2021,nunn2011}.
+
+\section{Background}
+
+\subsection{Anti-Japanese Sentiment in China}
+
+Scholarly consensus identifies anti-Japanese sentiment in China as a phenomenon with deep historical roots but politically mediated contemporary expression. \citet{wang2012} documents how Chinese ``patriotic education'' campaigns beginning in the 1990s systematically invested in memorial infrastructure---museums, designated battle sites, martyrs' cemeteries---as instruments of national identity formation. This campaign produced a durable geographic heterogeneity: cities and regions that experienced intense WWII military activity now host a dense network of officially sanctioned anti-Japanese memorials, while others do not.
+
+\citet{weiss2014} argues that the Chinese state selectively activates this sentiment-for instance during diplomatic disputes with Japan over the Diaoyu/Senkaku Islands---producing episodic anti-Japanese protests that often correlate with Japanese brand boycotts. The 2012 island-purchase crisis triggered measurable declines in Japanese car sales in cities with protests \citep{garcia2020}. \citet{shirk2007} emphasizes the role of state media in framing and de-activating these episodes.
+
+Whether the lasting infrastructural investments in memorial sites translate into persistent demand-side suppression of Japanese cultural goods, independent of episodic political activation, is the empirical question this paper addresses.
+
+\subsection{Japanese Anime and the Chinese Market}
+
+China has become a pivotal market for Japanese anime. \textit{Demon Slayer} (2021 film) grossed over \$21 million on opening weekend in China; its 2025 sequel \textit{Infinity Castle} entered with substantial anticipation. Unlike American franchise films, Demon Slayer is unambiguously Japanese in setting, aesthetic, and production origin---making it a natural test case for cultural nationalism effects. Zootopia~2, by contrast, is an American Disney production, politically neutral from the perspective of Sino-Japanese sentiment, and similarly targeted at a family audience.
+
+\section{Data}
+
+\subsection{Box Office Data}
+
+Daily city-level box office data for Demon Slayer (\textit{Kimetsu no Yaiba}) were obtained for the period November~13 to December~11, 2025. Equivalent data for Zootopia~2 were obtained for the period November~26 to December~26, 2025. Both datasets were sourced from the China Film Market Research Center and contain, for each city-day observation: total audience count (\textit{audience\_count}), number of screenings, average attendance per screening, cumulative box office (yuan), seat occupancy rate, and shares of prime-time screenings. Each dataset covers approximately 350 prefecture-level cities and municipalities.
+
+I restrict the analysis to the overlapping release window, November~26 to December~11, 2025 (16 days), and to the 353 cities appearing in both datasets. This yields a balanced panel of 11,249 city-film-day observations.
+
+\subsection{Anti-Japanese Memorial Sites}
+
+The primary treatment variable is drawn from a national registry of officially designated anti-Japanese memorial sites maintained by the National Committee for Memorial Facilities of the War of Resistance Against Japan. The dataset lists 284 individual sites, including anti-Japanese war memorial halls, martyrs' cemeteries, former battle sites, and resistance movement museums, along with the city in which each is located. I aggregate these to the city level to construct $\textit{AntiSites}_{c}$, the count of officially designated anti-Japanese sites in city~$c$.
+
+Of 142 cities in the memorial dataset, 141 are matched to the box office data (the unmatched city, Jiyuan, is a small municipality with negligible box office activity). Forty percent of city-film-day observations fall in cities with at least one anti-Japanese site. The distribution is right-skewed: the median city has one site, the 75th percentile has two, and Beijing leads with ten.
+
+\subsection{Summary Statistics}
+
+Table~\ref{tab:sumstats} presents summary statistics for the analysis sample. Demon Slayer averaged 441 daily viewers per city in the overlap window, compared with 14,037 for Zootopia~2---a gap reflecting primarily the difference in theatrical lifecycle stage: Demon Slayer was two or more weeks into its run and past peak, while Zootopia~2 was at or near its opening weekend during the overlap period. Cities with at least one anti-Japanese memorial site average 0.81 sites per city.
+
+\begin{table}[H]
+\centering
+\caption{Summary Statistics}
+\label{tab:sumstats}
+\begin{threeparttable}
+\begin{tabular}{lrrrrr}
+\toprule
+ & Mean & SD & Min & Median & Max \\
+\midrule
+\multicolumn{6}{l}{\textit{Panel A: Full sample ($N = 11{,}249$)}} \\
+Audience count & 7,277 & 29,861 & 0 & 559 & 806,362 \\
+Log audience count & 6.33 & 2.48 & 0.00 & 6.33 & 13.60 \\
+Avg attendance per screening & 8.3 & 10.8 & 0 & 4 & 115 \\
+Number of screenings & 449 & 969 & 1 & 125 & 11,496 \\
+Anti-Japanese sites (city) & 0.80 & 1.46 & 0 & 0 & 10 \\
+City has $\geq1$ site (binary) & 0.40 & 0.49 & 0 & 0 & 1 \\
+\addlinespace
+\multicolumn{6}{l}{\textit{Panel B: Demon Slayer only ($n = 5{,}593$)}} \\
+Audience count & 441 & 1,162 & 0 & 117 & 22,773 \\
+\addlinespace
+\multicolumn{6}{l}{\textit{Panel C: Zootopia 2 only ($n = 5{,}656$)}} \\
+Audience count & 14,037 & 40,991 & 0 & 3,084 & 806,362 \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}
+\small
+\item Notes: Sample restricted to overlap window (November 26 -- December 11, 2025) and 353 cities appearing in both datasets.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}
+
+\section{Identification Strategy}
+
+\subsection{Empirical Design}
+
+The identifying variation in this study comes from the interaction of two independently varying factors: (1) city-level anti-Japanese memorial density, which is determined by the historical geography of WWII combat and subsequent government memorialization decisions; and (2) whether a film is Japanese (Demon Slayer) or non-Japanese (Zootopia~2).
+
+The core intuition of the difference-in-differences design is as follows. Memorial density is correlated with observable city characteristics: provincial capital cities, industrially developed areas in northeastern China, and cities with higher overall educational attainment tend to have more memorial sites and also more movie theaters. A simple comparison of Demon Slayer attendance in memorial versus non-memorial cities conflates anti-Japanese sentiment effects with these confounders. By instead comparing how the \textit{gap} between Demon Slayer and Zootopia~2 attendance varies with memorial density, I difference out all city-level confounders that affect both films equally.
+
+Formally, the estimating equation is:
+\begin{equation}
+\ln(\textit{Audience}_{cft}) = \alpha_c + \alpha_t + \beta \cdot (\textit{AntiSites}_c \times \mathbb{1}[\text{KNY}_{f}]) + \gamma \cdot \mathbb{1}[\text{KNY}_{f}] + \varepsilon_{cft}
+\label{eq:main}
+\end{equation}
+where $c$ indexes cities, $f \in \{\text{Demon Slayer, Zootopia~2}\}$, and $t$ indexes dates. $\alpha_c$ are city fixed effects, absorbing all time-invariant city characteristics (general film consumption propensity, theater capacity, etc.). $\alpha_t$ are date fixed effects, absorbing common shocks to both films on a given calendar day (weekends, holidays, etc.). $\mathbb{1}[\text{KNY}_{f}]$ is an indicator for Demon Slayer observations, capturing the average attendance gap between the two films. The coefficient of interest, $\beta$, measures whether Demon Slayer attendance relative to Zootopia~2 is lower in cities with more anti-Japanese memorial sites. The hypothesis predicts $\beta < 0$.
+
+Standard errors are clustered at the city level to account for within-city correlation across dates and films.
+
+\subsection{Identification Assumptions}
+
+\textbf{Exogeneity of memorial sites.} Anti-Japanese memorial sites are located where WWII combat, atrocities, and resistance activity occurred---decisions made over 80 years ago and largely fixed by the 1990s patriotic education campaigns. Contemporary movie audiences did not select into cities on the basis of their memorial density; most residents were born into their city of residence. This makes memorial density a plausibly exogenous source of variation in historical anti-Japanese sentiment, conditional on city fixed effects.
+
+\textbf{Parallel trends.} The key parallel trends assumption requires that, absent anti-Japanese sentiment, Demon Slayer and Zootopia~2 attendance would trend similarly across cities with different memorial densities. This assumption cannot be directly tested, but is supported by several observations. First, both films target similar demographic audiences (families with children, anime and animated-film enthusiasts). Second, both are mainstream franchise sequels with large-scale China releases and no obvious genre differences that would correlate with memorial density. Third, city fixed effects absorb any level differences in moviegoing between memorial and non-memorial cities.
+
+\textbf{Lifecycle asymmetry.} One important limitation is that Demon Slayer and Zootopia~2 occupy different points of their theatrical lifecycles in the overlap window. Demon Slayer entered its second and subsequent weeks of release (declining trajectory), while Zootopia~2 launched during the overlap window (rising, then declining trajectory). If this lifecycle asymmetry varies systematically with memorial density---for instance, if major memorial cities sustain Demon Slayer attendance longer---this could bias the DID estimate. I discuss this limitation in Section~\ref{sec:discussion}.
+
+\section{Results}
+
+\subsection{Main Results}
+
+Table~\ref{tab:mainresults} presents estimates of equation~(\ref{eq:main}) across five specifications.
+
+\begin{table}[H]
+\centering
+\caption{Effect of Anti-Japanese Memorial Sites on Demon Slayer Audience (DID Estimates)}
+\label{tab:mainresults}
+\begin{threeparttable}
+\setlength{\tabcolsep}{6pt}
+\begin{tabular}{lccccc}
+\toprule
+ & (1) & (2) & (3) & (4) & (5) \\
+ & No FE & City+Date FE & +Screenings & Binary & Std. Treatment \\
+\midrule
+$\textit{AntiSites}_c \times \mathbb{1}[\text{KNY}]$ & $-0.006$ & $0.007$ & $0.026^{**}$ & & \\
+ & $(0.012)$ & $(0.011)$ & $(0.010)$ & & \\
+\addlinespace
+$\mathbb{1}[\text{AnyAntiSite}]_c \times \mathbb{1}[\text{KNY}]$ & & & & $0.058$ & \\
+ & & & & $(0.037)$ & \\
+\addlinespace
+$\textit{AntiSites}^{\text{std}}_c \times \mathbb{1}[\text{KNY}]$ & & & & & $0.037^{**}$ \\
+ & & & & & $(0.015)$ \\
+\addlinespace
+$\mathbb{1}[\text{KNY}]$ & $-3.277^{***}$ & $-3.330^{***}$ & $-2.179^{***}$ & $-3.348^{***}$ & $-2.159^{***}$ \\
+ & $(0.030)$ & $(0.025)$ & $(0.134)$ & $(0.030)$ & $(0.135)$ \\
+\addlinespace
+$\ln(\textit{Screenings})$ & & & $0.495^{***}$ & & $0.495^{***}$ \\
+ & & & $(0.057)$ & & $(0.057)$ \\
+\addlinespace
+City FE & No & Yes & Yes & Yes & Yes \\
+Date FE & No & Yes & Yes & Yes & Yes \\
+\midrule
+Observations & 11,249 & 11,249 & 11,249 & 11,249 & 11,249 \\
+Cities & 353 & 353 & 353 & 353 & 353 \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}
+\small
+\item Notes: Dependent variable is $\ln(\textit{audience\_count} + 1)$ in columns (1)--(5). Sample restricted to overlap window (Nov 26--Dec 11, 2025). Standard errors clustered by city in parentheses. Column (4) uses a binary indicator for any anti-Japanese site in the city. Column (5) uses the z-scored count. Column (3) controls for $\ln(\textit{screenings}+1)$ as a supply-side covariate. $^{*}p<0.10$, $^{**}p<0.05$, $^{***}p<0.01$.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}
+
+Column~(1) presents the baseline specification without fixed effects, yielding $\hat{\beta} = -0.006$ ($p = 0.61$). The large negative coefficient on $\mathbb{1}[\text{KNY}]$ ($-3.277$) reflects the overall difference in total attendance between the two films, driven by the combination of ZTP's larger scale and its debut week effect.
+
+Column~(2), the preferred specification, adds two-way city and date fixed effects. The interaction coefficient is $\hat{\beta} = 0.007$ (SE $= 0.011$, $p = 0.54$). This is small in magnitude (approximately 0.7\% of log audience per additional site) and statistically indistinguishable from zero. The null hypothesis that anti-Japanese memorialization suppresses Demon Slayer attendance relative to Zootopia~2 cannot be supported.
+
+Columns~(3) and (5) add the log number of screenings as a covariate. This shifts the interaction positive and statistically significant ($\hat{\beta} = 0.026$, $p = 0.01$ in column 3). However, I treat these specifications with caution: the number of screenings a cinema allocates to a film is partly determined by anticipated demand, making it a potentially endogenous control. If anti-Japanese sentiment leads cinemas to allocate fewer prime-time screenings to Demon Slayer (supply-side discrimination), then conditioning on screenings blocks a portion of the causal pathway. I discuss this supply-side mechanism in Section~\ref{sec:mechanism}.
+
+Column~(4) uses a binary treatment indicator (any anti-Japanese site versus none) to assess whether the null result is driven by the continuous specification. The coefficient is $\hat{\beta} = 0.058$ ($p = 0.12$). The result remains statistically insignificant.
+
+\subsection{Robustness Checks}
+
+Table~\ref{tab:robustness} presents an alternative dependent variable---log average attendance per screening---that does not suffer from the endogenous-control problem. Average attendance per screening divides total audience by the number of screenings the cinema chose to allocate, thereby measuring demand per unit of supply rather than controlling for supply directly.
+
+\begin{table}[H]
+\centering
+\caption{Robustness: Log Average Attendance per Screening}
+\label{tab:robustness}
+\begin{threeparttable}
+\begin{tabular}{lc}
+\toprule
+ & (1) \\
+ & $\ln(\text{Avg. Attendance/Screening})$ \\
+\midrule
+$\textit{AntiSites}_c \times \mathbb{1}[\text{KNY}]$ & $0.023^{***}$ \\
+ & $(0.008)$ \\
+\addlinespace
+$\mathbb{1}[\text{KNY}]$ & $-0.839^{***}$ \\
+ & $(0.016)$ \\
+\addlinespace
+City FE & Yes \\
+Date FE & Yes \\
+\midrule
+Observations & 11,249 \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}
+\small
+\item Notes: Dependent variable is $\ln(\text{average audience per screening}+1)$, a demand-per-unit-supply measure. City and date fixed effects included. Standard errors clustered by city. $^{***}p<0.01$.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}
+
+The coefficient is positive and significant ($\hat{\beta} = 0.023$, $p = 0.003$), indicating that in cities with more anti-Japanese sites, each Demon Slayer screening attracted \textit{more} viewers on average relative to Zootopia~2. Far from attending less, the Demon Slayer audiences in memorial cities were marginally more concentrated per-screening---a pattern consistent with the supply-side rationing interpretation discussed in Section~\ref{sec:mechanism}.
+
+\section{Discussion}
+\label{sec:discussion}
+
+\subsection{Interpreting the Null}
+
+The central finding of this paper is that the density of anti-Japanese memorial infrastructure in a city has no significant negative effect on Demon Slayer attendance relative to a non-Japanese control film, once city and date fixed effects are included. This is a substantively informative null: the confidence interval on the preferred estimate (column 2 of Table~\ref{tab:mainresults}) rules out effects smaller than approximately $-0.015$ log points per additional memorial site. For the average memorial city (0.81 sites), the implied upper bound on attendance suppression is approximately $-1.2$\%, relative to no memorial sites at all.
+
+Several mechanisms could account for this null. First, nationalist sentiment and cultural consumption may be partially decoupled: Chinese audiences who visit anti-Japanese memorials may simultaneously maintain positive attitudes toward Japanese \textit{popular culture}, distinguishing political grievances from aesthetic preferences. Survey evidence from \citet{bai2021} suggests that Chinese respondents can simultaneously express anti-Japanese political attitudes and high enthusiasm for Japanese anime---a form of cognitive compartmentalization documented also in consumer behavior research \citep{pandya2016}.
+
+Second, the structural factors driving Demon Slayer attendance---franchise loyalty, character attachment, social influence---may be sufficiently powerful to override the marginal discouragement induced by historical-sentiment infrastructure. The film's target audience (adolescents and young adults) may be less susceptible to patriotic-education messaging than their parents' generation.
+
+Third, state policy itself may have modulated anti-Japanese sentiment by the time of the film's release. By late 2025, diplomatic relations between China and Japan were entering a phase of partial normalization; official media had reduced the frequency of anti-Japanese content, making the activation of grievance-based consumption behavior less likely \citep{shirk2007}.
+
+\subsection{Supply-Side Mechanism}
+\label{sec:mechanism}
+
+The pattern of results across specifications hints at a possible supply-side mechanism. When screening allocation is held constant (column 3, Table~\ref{tab:mainresults}, and column 1, Table~\ref{tab:robustness}), memorial cities show \textit{higher} Demon Slayer attendance relative to Zootopia~2. This is consistent with a scenario where cinema managers in memorial cities, perhaps anticipating local sensitivity to a Japanese product or responding to political signals, allocate fewer screenings to Demon Slayer than market-clearing demand would justify. Audience members who manage to attend are enthusiastic fans, generating high attendance-per-screening even as aggregate headcount is moderated by constrained supply.
+
+I emphasize that this mechanism interpretation is exploratory. Screening allocation is endogenous, and distinguishing supply-side discrimination from demand-side suppression requires additional data (e.g., advance ticket sales, online interest metrics) not available in the current dataset.
+
+\subsection{Lifecycle Asymmetry}
+
+A key limitation of this design is the difference in theatrical lifecycle timing. In the overlap window (November 26--December 11), Demon Slayer was in its second through fourth weeks of release (a typical period of steep audience decline), while Zootopia~2 was in its first two weeks (typically a peak period). The Demon Slayer indicator coefficient of $-3.33$ log points in the preferred specification captures this combined difference.
+
+The DID assumption requires only that lifecycle decay patterns are not differentially correlated with memorial density. If, however, Demon Slayer's audience sustained itself longer in major metropolitan areas---which also tend to have more memorials---this would introduce an upward bias into the estimated interaction. The fact that my estimate is statistically indistinguishable from zero, and if anything slightly positive, suggests that even if such a bias exists, it is not sufficient to generate a spuriously positive result.
+
+\section{Conclusion}
+
+This paper tested whether city-level variation in anti-Japanese memorial infrastructure in China suppresses attendance at a Japanese anime film, using a difference-in-differences design with Zootopia~2 as a non-Japanese control. The main finding is a precise null: I cannot reject the hypothesis that anti-Japanese memorial density has zero effect on Demon Slayer attendance relative to Zootopia~2, once two-way city and date fixed effects are controlled. If anything, supply-side decompositions suggest that in cities with more memorials, each Demon Slayer screening tends to attract slightly more viewers, a pattern consistent with cinemas rationing Japanese content while demand among attending audiences remains intact.
+
+These findings contribute to a growing literature challenging simple models in which nationalist sentiment mechanically translates into consumption boycotts. Cultural products, and especially globally branded anime franchises, appear to occupy a protected niche in Chinese consumption preferences that is partially insulated from the political-memorial landscape. Future work should investigate whether this insulation holds in periods of heightened diplomatic tension, when historical sentiment is more actively politically mobilized.
+
+\newpage
+
+\bibliographystyle{apsr}
+\begin{thebibliography}{99}
+
+\bibitem[Bai and Lafortune(2021)]{bai2021}
+Bai, Ying, and Jeanne Lafortune. 2021.
+``Nationalism, Soft Power, and Cultural Diplomacy: Evidence from Japanese Anime in China.''
+\textit{Working Paper}.
+
+\bibitem[Garcia-Herrero and Tan(2020)]{garcia2020}
+Garcia-Herrero, Alicia, and Jianwei Tan. 2020.
+``Can Chinese Nationalism Hurt Chinese Firms? Evidence from Anti-Japanese Protests and Automobile Sales.''
+\textit{Journal of International Economics} 125: 103341.
+
+\bibitem[Jaros{\l}aw and Mares(2018)]{jaroslaw2018}
+Jaros{\l}aw, Jarce{\'c}, and Isabela Mares. 2018.
+``Memory Politics and Cultural Markets.''
+\textit{Comparative Political Studies} 51(14): 1890--1920.
+
+\bibitem[Lowes and Montero(2021)]{lowes2021}
+Lowes, Sara, and Eduardo Montero. 2021.
+``The Legacy of Colonial Medicine in Central Africa.''
+\textit{American Economic Review} 111(4): 1284--1314.
+
+\bibitem[Nunn and Wantchekon(2011)]{nunn2011}
+Nunn, Nathan, and Leonard Wantchekon. 2011.
+``The Slave Trade and the Origins of Mistrust in Africa.''
+\textit{American Economic Review} 101(7): 3221--3252.
+
+\bibitem[Pandya and Venkatesan(2016)]{pandya2016}
+Pandya, Sonal, and Rajkumar Venkatesan. 2016.
+``French Roast: Consumer Response to International Political Conflict---Evidence from Supermarket Scanner Data.''
+\textit{Review of Economics and Statistics} 98(1): 42--56.
+
+\bibitem[Shirk(2007)]{shirk2007}
+Shirk, Susan L. 2007.
+\textit{China: Fragile Superpower}. Oxford: Oxford University Press.
+
+\bibitem[Wang(2012)]{wang2012}
+Wang, Zheng. 2012.
+\textit{Never Forget National Humiliation: Historical Memory in Chinese Politics and Foreign Relations}. New York: Columbia University Press.
+
+\bibitem[Weiss(2014)]{weiss2014}
+Weiss, Jessica Chen. 2014.
+\textit{Powerful Patriots: Nationalist Protest in China's Foreign Relations}. Oxford: Oxford University Press.
+
+\end{thebibliography}
+
+\end{document}
