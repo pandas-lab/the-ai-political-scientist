@@ -5,7 +5,8 @@ This repository contains the prompts, supplemental materials, and output from ex
 
 ## Authors
 -    [Benjamin J. Radford](https://www.benradford.com)
--    Your name here if you participate
+-    Muyao Hang
+-    Masateru Yamatani
 
 ## Contents
 1. [Submitting a Project](#submitting-a-project)
@@ -43,7 +44,7 @@ If you are a current member the University of Pittsburgh's Department of Politic
 ## Recommended Models
 
 - [qwen3-coder-next](https://ollama.com/library/qwen3-coder-next)
-- [Jackrong/Qwen3.5-27B-Claude-4.6-Opus-Reasoning-Distilled-GGUF](https://huggingface.co/Jackrong/Qwen3.5-27B-Claude-4.6-Opus-Reasoning-Distilled-GGUF)
+- [Jackrong/Qwen3.5-27B-Claude-4.6-Opus-Reasoning-Distilled-GGUF:Q8.0](https://huggingface.co/Jackrong/Qwen3.5-27B-Claude-4.6-Opus-Reasoning-Distilled-GGUF)
 - [qwen3.5-27B](https://ollama.com/library/qwen3.5)
 - [glm-4.7-flash](https://ollama.com/library/glm-4.7-flash) (Has a habit of quitting early.)
 - [gpt-oss](https://ollama.com/library/gpt-oss)
@@ -57,3 +58,5 @@ I have both Claude Code (harness) and Ollama (LLM server) running on my workstat
 ## Notes
 
 - Check out the Sonnet 4.6 paper. It's legit. You get what you pay for.
+- `muh/` model is `Jackrong/Qwen3.5-27B-Claude-4.6-Opus-Reasoning-Distilled-GGUF:Q8.0`
+- Once a job is submitted, it typically takes between 10 and 20 minutes to complete.
