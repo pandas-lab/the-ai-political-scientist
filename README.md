@@ -17,6 +17,8 @@ This repository contains the prompts, supplemental materials, and output from ex
 
 ## Submitting a Project
 
+*Note: we are not trying to build a great AI scientist. We want to evaluate AI agents' ability to generate research in the way most applied researchers will use them: one-shot prompting with minimal guidance and feedback.*
+
 If you are a current member the University of Pittsburgh's Department of Political Science or School of Public and International Affairs, send to me ([Benjamin J. Radford](https://www.benradford.com)) the following items:
 
 1. **Prompt**: Your prompt as a text document.
